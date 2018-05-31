@@ -1,0 +1,98 @@
+<!-- Slide Menu-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+
+
+<aside class="side-menu__container" [ngClass]="{'side-menu__container-active': showMenu}" (click)="toggleMenu()">
+  <nav class="slide-menu" [ngClass]="{'slide-menu-active': showMenu}" (click)="$event.stopImmediatePropagation();">
+    <section class="menu-header">
+      <span class="greeting__text">HI THERE</span>
+      <div class="profile-image__container">
+        <img src="https://scontent.fcxh2-1.fna.fbcdn.net/v/t31.0-8/13320546_1381550911874860_1867569006949922804_o.jpg?_nc_cat=0&oh=90d64ae8deff54380fbe1f8a5ddfc574&oe=5BB85844" alt="profile-image"
+             class="profile__image">
+      </div>
+      <div class="account-details">
+        <span class="name__text">Adebayo E. Ogunmuyiwa</span>
+        <span class="email__text">aeogunmuyiwa@gmail.com</span>
+        <i class="fas fa-phone">+1 204-698-6037</i>
+
+      </div>
+    </section>
+    <section class="menu-body">
+
+    </section>
+    <section class="menu-footer">
+
+        <i class="fab fa-github"> github.com/aeogunmuyiwa/</i>
+        <i class="fab fa-linkedin-in" aria-hidden="true"> www.linkedin.com/in/aeogunmuyiwa</i>
+
+    </section>
+  </nav>
+</aside>
+
+<div class="root__container">
+  <header [ngClass]="{'main__header-dark': darkModeActive}" class="main__header">
+
+    <div class="left__section">
+      <svg (click)="toggleMenu()" class="hamburger__icon" id="Menu_Burger_Icon" data-name="Menu Burger Icon"
+           viewBox="31.5 30 49.9 32">
+        <defs>
+          <style>.hamburger__icon__fill {
+            fill: #594e78
+          }</style>
+        </defs>
+        <rect id="Rectangle_9" width="49.9" height="4" [ngClass]="{'hamburger__icon__fill-dark': darkModeActive}"
+              class="hamburger__icon__fill" data-name="Rectangle 9" rx="2"
+              transform="translate(31.5 58)"/>
+        <rect id="Rectangle_10" width="49.9" height="4" [ngClass]="{'hamburger__icon__fill-dark': darkModeActive}"
+              class="hamburger__icon__fill" data-name="Rectangle 10" rx="2"
+              transform="translate(31.5 44)"/>
+        <rect id="Rectangle_11" width="49.9" height="4" [ngClass]="{'hamburger__icon__fill-dark': darkModeActive}"
+              class="hamburger__icon__fill" data-name="Rectangle 11" rx="2"
+              transform="translate(31.5 30)"/>
+      </svg>
+
+      <svg class="logo__icon" viewBox="150.3 22.2 213.7 42.8">
+        <path fill="#00ff9b" d="M150.3 65V22.2L193 65z" data-name="Path 1"/>
+        <path fill="#003eff" d="M193.1 65h-42.8L193 22.2z" data-name="Path 2"/>
+        <text [ngClass]="{'logo__text-dark': darkModeActive}" class="logo__text" fill="#432c85"
+              font-family="SegoeUI-Semibold,Segoe UI" font-size="30" font-weight="600"
+              letter-spacing=".1em" transform="translate(237 56)">
+          <tspan x="0" y="0">Tempa</tspan>
+        </text>
+      </svg>
+
+    </div>
+
+    <h3 class="date__text">Today</h3>
+
+
+    <div class="mode-toggle__container">
+      <span class="mode-toggle__text">Light</span>
+
+      <label class="toggle-button__container">
+        <input (click)="modeToggleSwitch()" type="checkbox" class="mode-toggle__input"/>
+        <span [ngClass]="{'mode-toggle__bg-checked': darkModeActive}" class="mode-toggle__bg"></span>
+        <span [ngClass]="{'mode-toggle__circle-checked': darkModeActive}" class="mode-toggle__circle"></span>
+      </label>
+
+
+      <span class="mode-toggle__text">Dark</span>
+    </div>
+
+  </header>
+
+  <!-- Main Content -->
+
+  <!--<router-outlet></router-outlet>-->
+  <main class="main__container">
+    <div class="main-container__bg" [ngClass]="{'main-container__bg-dark': darkModeActive}"></div>
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer -->
+
+  <footer class="main__footer">
+    <small class="copyright__text">Copyright © 2018 Adebayo E.Ogunmuyiwa</small>
+  </footer>
+</div>
